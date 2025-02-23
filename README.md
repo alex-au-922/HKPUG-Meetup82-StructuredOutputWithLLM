@@ -1,0 +1,1 @@
+# HKPUG-Meetup82-StructuredOutputWithLLM
