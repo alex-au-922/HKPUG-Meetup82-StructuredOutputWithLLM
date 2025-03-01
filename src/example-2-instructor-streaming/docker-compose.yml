@@ -1,0 +1,20 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: dockerfile
+    image: hkpug-example-2-instructor-streaming:frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: dockerfile
+    image: hkpug-example-2-instructor-streaming:backend
+    env_file:
+      - ../../.env
+    ports:
+      - "8080:8080"

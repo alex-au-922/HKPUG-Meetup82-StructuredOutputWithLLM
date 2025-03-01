@@ -1,0 +1,12 @@
+[project]
+name = "example-3-instructor-enum"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fireworks-ai>=0.15.12",
+    "instructor>=1.7.2",
+    "openai>=1.64.0",
+    "orjson>=3.10.15",
+]

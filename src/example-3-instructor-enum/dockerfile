@@ -1,0 +1,11 @@
+FROM ghcr.io/astral-sh/uv:python3.13-alpine AS dependencies
+WORKDIR /app
+COPY pyproject.toml .
+RUN uv export --no-dev > requirements.txt
+
+FROM python:3.13-slim AS base
+WORKDIR /app
+COPY --from=dependencies /app/requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
+CMD ["python", "main.py"]
